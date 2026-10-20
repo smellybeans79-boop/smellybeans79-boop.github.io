@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clip Uploader</title>
-<meta name="description" content="Clip Uploader is a personal tool that uploads short videos to its owner's own YouTube channel.">
+<meta name="description" content="Clip Uploader is a personal tool that uploads short videos to its owner's own YouTube channels.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,14 +14,18 @@
   <p class="meta">A personal, non-commercial video tool</p>
 
   <p>Clip Uploader is a desktop tool that runs on its owner's own computer. It turns long videos
-  into short vertical clips (cropping to the speaker and adding captions) and then uploads those clips
-  to the owner's own YouTube channel using the YouTube Data API.</p>
+  into short vertical clips (cropping to the speaker, or placing a streamer's webcam above the gameplay,
+  and adding captions) and then uploads those clips to the owner's own YouTube channels using the
+  YouTube Data API. The owner runs two channels: one for podcast clips and one for gaming clips.</p>
 
   <div class="card">
     <strong>What it does with YouTube</strong>
     <ul>
-      <li>Uploads videos the owner has created to the owner's own channel (<code>youtube.upload</code> scope only).</li>
+      <li>Uploads videos the owner has created to the owner's own channels (<code>youtube.upload</code> scope).</li>
       <li>Sets each video's title, description, tags and privacy status at upload time.</li>
+      <li>Before uploading gaming clips, reads the signed-in channel's ID and title (<code>youtube.readonly</code>
+      scope, <code>channels.list</code> with <code>mine=true</code>) to confirm it is the gaming channel, and
+      stops if it isn't.</li>
       <li>Does not read, download, analyze or modify any other YouTube data, and is not offered to other users.</li>
     </ul>
   </div>

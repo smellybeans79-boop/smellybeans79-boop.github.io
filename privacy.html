@@ -10,11 +10,11 @@
 <main>
   <nav><a href="index.html">Home</a><a href="privacy.html" aria-current="page">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
   <h1>Privacy Policy</h1>
-  <p class="meta">Clip Uploader · Effective October 17, 2026</p>
+  <p class="meta">Clip Uploader · Effective October 20, 2026</p>
 
   <p>Clip Uploader ("the app") is a personal desktop tool used only by its owner to upload short videos
-  to the owner's own YouTube channel. This policy explains what information the app accesses, how it
-  is used and stored, and how to revoke access.</p>
+  to the owner's own YouTube channels (one for podcast clips, one for gaming clips). This policy explains
+  what information the app accesses, how it is used and stored, and how to revoke access.</p>
 
   <h2>YouTube API Services</h2>
   <p>The app uses YouTube API Services. By using the app you agree to the
@@ -23,16 +23,22 @@
 
   <h2>Information the app accesses</h2>
   <ul>
-    <li>A Google OAuth access token and refresh token, granted for the <code>youtube.upload</code> scope only.</li>
+    <li>Google OAuth access and refresh tokens, one for each of the app's upload tools. The token used for
+    the podcast-clips channel is granted the <code>youtube.upload</code> scope; the tokens used for the
+    gaming-clips channel are granted <code>youtube.upload</code> and <code>youtube.readonly</code>.</li>
+    <li>With <code>youtube.readonly</code>, only the signed-in channel's ID and title (via
+    <code>channels.list</code> with <code>mine=true</code>), read before each upload session to confirm the
+    clips are going to the right channel.</li>
     <li>The video files, titles, descriptions, tags and privacy settings the owner chooses to upload.</li>
     <li>The video ID YouTube returns after each upload, so the same clip is not uploaded twice.</li>
   </ul>
-  <p>The app does not request or read your name, email address, contacts, viewing history,
-  subscriptions, comments, analytics or any other YouTube or Google account data.</p>
+  <p>Apart from that channel ID and title, the app does not request or read your name, email address,
+  contacts, viewing history, subscriptions, comments, analytics or any other YouTube or Google account data.</p>
 
   <h2>How the information is used</h2>
-  <p>The tokens are used solely to upload the owner's videos to the owner's own channel and to set
-  their metadata. Nothing is used for advertising, profiling or any other purpose.</p>
+  <p>The tokens are used solely to upload the owner's videos to the owner's own channels, to set their
+  metadata, and to check that the signed-in channel is the intended one before uploading. Nothing is
+  used for advertising, profiling or any other purpose.</p>
 
   <h2>Storage</h2>
   <p>All information is stored only on the owner's own computer, in local files. The app has no
